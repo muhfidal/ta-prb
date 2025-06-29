@@ -1,0 +1,10 @@
+| Data Pasien PRB |
+|----------------|
+| Nama Pasien    | No BPJS        | Gender      | Tanggal Lahir | Alamat         |
+|----------------|---------------|-------------|---------------|----------------|
+| Contoh Nama    | 1234567890123  | Laki-laki   | 2000-01-01    | Contoh Alamat  |
+| Contoh Nama 2  | 9876543210987  | Perempuan   | 2001-02-02    | Alamat Lain    |
+
+# Gender diisi dengan "Laki-laki" atau "Perempuan"
+# Tanggal lahir format YYYY-MM-DD
+# No BPJS diisi tanpa spasi, pastikan format kolom No BPJS adalah Teks

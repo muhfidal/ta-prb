@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Kelola Kriteria - Sistem PRB</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: none;
+        }
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 220px;
+            border-right: 1px solid #000;
+            padding: 24px 0 24px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .sidebar-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .sidebar-logo {
+            width: 48px;
+            height: 48px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            margin: 0 auto 8px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+        .sidebar-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar-menu li {
+            padding: 10px 24px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .sidebar-menu li:last-child {
+            border-bottom: none;
+        }
+        .main {
+            flex: 1;
+            padding: 32px 32px 32px 32px;
+            background: none;
+        }
+        .user-bar {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            text-align: right;
+        }
+        .user-avatar {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .user-name {
+            font-size: 0.95rem;
+            vertical-align: middle;
+        }
+        .content-box {
+            margin: 0 auto;
+            max-width: 900px;
+            background: none;
+            border: 1px solid #000;
+            border-radius: 18px;
+            padding: 32px 24px 24px 24px;
+        }
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        .content-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        .add-btn {
+            border: 1px solid #000;
+            border-radius: 8px;
+            padding: 8px 18px;
+            background: none;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .table-box {
+            border: 1px solid #000;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: none;
+        }
+        th, td {
+            border-bottom: 1px solid #ccc;
+            padding: 12px 8px;
+            text-align: left;
+        }
+        th {
+            background: none;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .aksi {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">Logo</div>
+                <div class="sidebar-title">Sistem PRB</div>
+                <div class="sidebar-subtitle">Puskesmas Purwanegara 1</div>
+            </div>
+            <ul class="sidebar-menu">
+                <li>Dashboard</li>
+                <li>Pengambilan Obat</li>
+                <li>Pasien</li>
+                <li>Resep</li>
+                <li>Obat</li>
+                <li>Penyakit</li>
+                <li>Rekomendasi Obat</li>
+                <li>Kelola Akun</li>
+                <li>Kelola Dokter</li>
+                <li>SPK</li>
+                <li>Laporan</li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="user-bar">
+                <span class="user-avatar"></span>
+                <span class="user-name">Administrator</span>
+            </div>
+            <div class="content-box">
+                <div class="content-header">
+                    <div class="content-title">Kelola Kriteria</div>
+                    <button class="add-btn">+ Tambah Kriteria</button>
+                </div>
+                <div class="table-box">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;">NO</th>
+                                <th>NAMA KRITERIA</th>
+                                <th style="width: 120px;">BOBOT</th>
+                                <th style="width: 100px;">AKSI</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

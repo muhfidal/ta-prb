@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Pasien - Sistem PRB</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: none;
+        }
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 220px;
+            border-right: 1px solid #000;
+            padding: 24px 0 24px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .sidebar-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .sidebar-logo {
+            width: 48px;
+            height: 48px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            margin: 0 auto 8px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+        .sidebar-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar-menu li {
+            padding: 10px 24px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .sidebar-menu li:last-child {
+            border-bottom: none;
+        }
+        .main {
+            flex: 1;
+            padding: 32px 32px 32px 32px;
+            background: none;
+        }
+        .user-bar {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            text-align: right;
+        }
+        .user-avatar {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .user-name {
+            font-size: 0.95rem;
+            vertical-align: middle;
+        }
+        .content-box {
+            margin: 0 auto;
+            max-width: 1400px;
+            background: none;
+            border: 1px solid #000;
+            border-radius: 18px;
+            padding: 32px 24px 24px 24px;
+        }
+        .header-bar {
+            border: 1px solid #000;
+            border-radius: 12px;
+            padding: 24px 24px 16px 24px;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .header-desc {
+            font-size: 1rem;
+        }
+        .date-box {
+            border: 1px solid #000;
+            border-radius: 8px;
+            padding: 6px 16px;
+            font-size: 0.97rem;
+        }
+        .main-row {
+            display: flex;
+            gap: 24px;
+        }
+        .col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .section-box {
+            border: 1px solid #000;
+            border-radius: 12px;
+            padding: 24px 18px 18px 18px;
+            background: none;
+        }
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        .profile-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .profile-list li {
+            margin-bottom: 12px;
+        }
+        .profile-label {
+            font-size: 0.97rem;
+            color: #222;
+        }
+        .profile-value {
+            font-weight: bold;
+            font-size: 1.05rem;
+        }
+        .profile-id {
+            float: right;
+            border: 1px solid #000;
+            border-radius: 8px;
+            padding: 2px 10px;
+            font-size: 0.97rem;
+        }
+        .disease-list, .medicine-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .disease-list li, .medicine-list li {
+            margin-bottom: 6px;
+        }
+        .history-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .history-item {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #000;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-size: 0.97rem;
+        }
+        .history-label {
+            font-size: 0.95rem;
+            margin-top: 4px;
+        }
+        .legend {
+            margin-top: 12px;
+            font-size: 0.95rem;
+        }
+        .footer-btns {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            margin-top: 32px;
+        }
+        .footer-btn {
+            border: 1px solid #000;
+            border-radius: 8px;
+            padding: 10px 18px;
+            background: none;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">Logo</div>
+                <div class="sidebar-title">Sistem PRB</div>
+                <div class="sidebar-subtitle">Puskesmas Purwanegara 1</div>
+            </div>
+            <ul class="sidebar-menu">
+                <li>Dashboard</li>
+                <li>Pengambilan Obat</li>
+                <li>Pasien</li>
+                <li>Resep</li>
+                <li>Obat</li>
+                <li>Penyakit</li>
+                <li>Rekomendasi Obat</li>
+                <li>Kelola Akun</li>
+                <li>Kelola Dokter</li>
+                <li>SPK</li>
+                <li>Laporan</li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="user-bar">
+                <span class="user-avatar"></span>
+                <span class="user-name">Administrator</span>
+            </div>
+            <div class="content-box">
+                <div class="header-bar">
+                    <div>
+                        <div class="header-title">Detail Pasien</div>
+                        <div class="header-desc">Informasi lengkap dan riwayat pasien PRB</div>
+                    </div>
+                    <div class="date-box">16 Jun 2025</div>
+                </div>
+                <div class="main-row">
+                    <div class="col">
+                        <div class="section-box">
+                            <div class="section-title">Profil Pasien <span class="profile-id">ID: 1</span></div>
+                            <ul class="profile-list">
+                                <li><span class="profile-label">Nama Lengkap</span><br><span class="profile-value">Muhfid Al Munawar</span></li>
+                                <li><span class="profile-label">Nomor BPJS</span><br><span class="profile-value">4563464353425</span></li>
+                                <li><span class="profile-label">Jenis Kelamin</span><br><span class="profile-value">Laki-laki</span></li>
+                                <li><span class="profile-label">Tanggal Lahir</span><br><span class="profile-value">10 Oct 2000 (24 tahun)</span></li>
+                                <li><span class="profile-label">Alamat</span><br><span class="profile-value">RT 009/RW 009, Desa/Kel. KINCANG, Kec. RAKIT, KABUPATEN BANJARNEGARA, JAWA TENGAH, 00000</span></li>
+                                <li><span class="profile-label">Total Kunjungan</span><br><span class="profile-value">3x (Terakhir: 27 May 2025)</span><br>0 kali pengambilan bulan ini</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="section-box">
+                            <div class="section-title">Daftar Penyakit dan Obat</div>
+                            <div>
+                                <div><b>Resep:</b> PRE-1748360002</div>
+                                <div><b>Penyakit:</b></div>
+                                <ul class="disease-list">
+                                    <li>Demam</li>
+                                </ul>
+                                <div><b>Obat:</b></div>
+                                <ul class="medicine-list">
+                                    <li>Paracetamol</li>
+                                </ul>
+                                <div style="font-size:0.95rem; margin-top:8px;">27 May 2025</div>
+                            </div>
+                        </div>
+                        <div class="section-box">
+                            <div class="section-title">Riwayat Pengambilan Obat</div>
+                            <div class="history-box">
+                                <div class="history-item">Jan<br><span class="history-label">-</span></div>
+                                <div class="history-item">Feb<br><span class="history-label">-</span></div>
+                                <div class="history-item">Mar<br><span class="history-label">-</span></div>
+                                <div class="history-item">Apr<br><span class="history-label">-</span></div>
+                                <div class="history-item">Mei<br><span class="history-label">✓</span></div>
+                                <div class="history-item">Jun<br><span class="history-label">o</span></div>
+                                <div class="history-item">Jul<br><span class="history-label">o</span></div>
+                                <div class="history-item">Agu<br><span class="history-label">o</span></div>
+                                <div class="history-item">Sep<br><span class="history-label">o</span></div>
+                                <div class="history-item">Okt<br><span class="history-label">o</span></div>
+                                <div class="history-item">Nov<br><span class="history-label">o</span></div>
+                                <div class="history-item">Des<br><span class="history-label">o</span></div>
+                            </div>
+                            <div class="legend">
+                                <span>✓ Telah Mengambil</span> | <span>- Belum Mengambil (Lewat)</span> | <span>o Belum Waktunya</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-btns">
+                    <button class="footer-btn">Kembali</button>
+                    <button class="footer-btn">Edit Pasien</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

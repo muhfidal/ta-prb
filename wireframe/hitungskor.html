@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Analisis Rekomendasi Obat - Sistem PRB</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: none;
+        }
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 220px;
+            border-right: 1px solid #000;
+            padding: 24px 0 24px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .sidebar-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .sidebar-logo {
+            width: 48px;
+            height: 48px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            margin: 0 auto 8px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+        .sidebar-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar-menu li {
+            padding: 10px 24px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .sidebar-menu li:last-child {
+            border-bottom: none;
+        }
+        .main {
+            flex: 1;
+            padding: 32px 32px 32px 32px;
+            background: none;
+        }
+        .user-bar {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            text-align: right;
+        }
+        .user-avatar {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .user-name {
+            font-size: 0.95rem;
+            vertical-align: middle;
+        }
+        .content-box {
+            margin: 0 auto;
+            max-width: 1200px;
+            background: none;
+            border: 1px solid #000;
+            border-radius: 18px;
+            padding: 32px 24px 24px 24px;
+        }
+        .header-bar {
+            border: 1px solid #000;
+            border-radius: 12px;
+            padding: 24px 24px 16px 24px;
+            margin-bottom: 24px;
+        }
+        .header-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-desc {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+        .date-box {
+            float: right;
+            border: 1px solid #000;
+            border-radius: 8px;
+            padding: 6px 16px;
+            font-size: 0.97rem;
+            margin-top: -32px;
+        }
+        .form-section {
+            border: 1px solid #000;
+            border-radius: 12px;
+            padding: 24px 24px 16px 24px;
+            margin-bottom: 24px;
+        }
+        .form-label {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .form-row {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+        .form-select {
+            flex: 1;
+            border: 1px solid #000;
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 1rem;
+        }
+        .form-btn {
+            border: 1px solid #000;
+            border-radius: 8px;
+            padding: 10px 18px;
+            background: none;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .info-box {
+            border: 1px solid #000;
+            border-radius: 8px;
+            padding: 16px 18px;
+            margin-top: 18px;
+            font-size: 0.97rem;
+            background: none;
+        }
+        .info-link {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">Logo</div>
+                <div class="sidebar-title">Sistem PRB</div>
+                <div class="sidebar-subtitle">Puskesmas Purwanegara 1</div>
+            </div>
+            <ul class="sidebar-menu">
+                <li>Dashboard</li>
+                <li>Pengambilan Obat</li>
+                <li>Pasien</li>
+                <li>Resep</li>
+                <li>Obat</li>
+                <li>Penyakit</li>
+                <li>Rekomendasi Obat</li>
+                <li>Kelola Akun</li>
+                <li>Kelola Dokter</li>
+                <li>SPK</li>
+                <li>Laporan</li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="user-bar">
+                <span class="user-avatar"></span>
+                <span class="user-name">Administrator</span>
+            </div>
+            <div class="content-box">
+                <div class="header-bar">
+                    <div class="header-title">Analisis Rekomendasi Obat</div>
+                    <div class="header-desc">Sistem pendukung keputusan berbasis Fuzzy AHP</div>
+                    <div class="date-box">16 Jun 2025, 07:43</div>
+                </div>
+                <div class="form-section">
+                    <div class="form-label">Pilih Penyakit untuk Analisis</div>
+                    <div class="form-row">
+                        <select class="form-select">
+                            <option>Diare Akut</option>
+                        </select>
+                        <button class="form-btn">Mulai Analisis</button>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <b>Penting:</b> Hasil analisis bersifat rekomendasi sistem. Selalu konsultasikan dengan tenaga medis profesional sebelum menentukan pengobatan. <span class="info-link">Analisis Penyakit Lain</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

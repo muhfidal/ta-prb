@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Sistem PRB</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: none;
+        }
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 220px;
+            border-right: 1px solid #000;
+            padding: 24px 0 24px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .sidebar-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .sidebar-logo {
+            width: 48px;
+            height: 48px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            margin: 0 auto 8px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+        .sidebar-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar-menu li {
+            padding: 10px 24px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .sidebar-menu li:last-child {
+            border-bottom: none;
+        }
+        .main {
+            flex: 1;
+            padding: 32px 32px 32px 32px;
+        }
+        .header-bar {
+            border: 1px solid #000;
+            border-radius: 8px;
+            padding: 24px 24px 16px 24px;
+            margin-bottom: 24px;
+        }
+        .header-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-desc {
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+        .summary-row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .summary-card {
+            flex: 1;
+            border: 1px solid #000;
+            border-radius: 8px;
+            padding: 18px 12px;
+            text-align: center;
+        }
+        .summary-label {
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+        .summary-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .section {
+            border: 1px solid #000;
+            border-radius: 8px;
+            padding: 18px 18px 18px 18px;
+            margin-bottom: 24px;
+        }
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        .stat-row {
+            display: flex;
+            gap: 24px;
+        }
+        .stat-col {
+            flex: 1;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 18px;
+            border: 1px solid #000;
+            border-radius: 8px;
+            margin: 12px 0;
+        }
+        .activity-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .activity-list li {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+        .activity-list li:last-child {
+            border-bottom: none;
+        }
+        .chart-box {
+            border: 1px solid #000;
+            border-radius: 8px;
+            height: 180px;
+            margin-top: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            color: #888;
+        }
+        .user-bar {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            text-align: right;
+        }
+        .user-avatar {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .user-name {
+            font-size: 0.95rem;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">Logo</div>
+                <div class="sidebar-title">Sistem PRB</div>
+                <div class="sidebar-subtitle">Puskesmas Purwanegara 1</div>
+            </div>
+            <ul class="sidebar-menu">
+                <li>Dashboard</li>
+                <li>Pengambilan Obat</li>
+                <li>Pasien</li>
+                <li>Resep</li>
+                <li>Obat</li>
+                <li>Penyakit</li>
+                <li>Rekomendasi Obat</li>
+                <li>Kelola Akun</li>
+                <li>Kelola Dokter</li>
+                <li>SPK</li>
+                <li>Laporan</li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="user-bar">
+                <span class="user-avatar"></span>
+                <span class="user-name">Administrator</span>
+            </div>
+            <div class="header-bar">
+                <div class="header-title">Selamat Datang, Administrator!</div>
+                <div class="header-desc">Dashboard Sistem PRB (Program Rujuk Balik) - Puskesmas Purwanegara 1</div>
+                <div class="summary-row">
+                    <div class="summary-card">
+                        <div class="summary-label">Total Pasien</div>
+                        <div class="summary-value">2</div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-label">Total Resep</div>
+                        <div class="summary-value">1</div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-label">Data Obat</div>
+                        <div class="summary-value">8</div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-label">Total Gejala</div>
+                        <div class="summary-value">0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-col">
+                    <div class="section">
+                        <div class="section-title">Statistik Pengambilan Obat</div>
+                        <div>Persentase pasien yang telah mengambil obat</div>
+                        <div class="progress-bar"></div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.95rem;">
+                            <span>Total Pengambilan: 0</span>
+                            <span>Persentase: 0.0%</span>
+                            <span>Status: Perlu Perhatian</span>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-title">Aktivitas Terbaru</div>
+                        <div>Aktivitas sistem hari ini</div>
+                        <ul class="activity-list">
+                            <li>Pengambilan Obat - Mufhid Al Munawar mengambil obat dari dr. Ahmad Sanjaya</li>
+                            <li>Pengambilan Obat - Mufhid Al Munawar mengambil obat dari dr. Ahmad Sanjaya</li>
+                            <li>Penambahan Pasien - Ahmad ditambahkan oleh Administrator</li>
+                            <li>Pengambilan Obat - Mufhid Al Munawar mengambil obat dari dr. Ahmad Sanjaya</li>
+                            <li>Penambahan Pasien - Ahmad ditambahkan oleh Administrator</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="stat-col">
+                    <div class="section">
+                        <div class="section-title">Statistik Bulanan</div>
+                        <div>Pengambilan obat dalam 6 bulan terakhir</div>
+                        <div class="chart-box">[Grafik Statistik Bulanan]</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
